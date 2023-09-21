@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background-color: #0a0214;
+    color: #fff;
+    
+   
+}
+.container {
+    width: 90%;
+    max-width: 470px;
+    max-height: 700px;
+    height: auto;
+    background: linear-gradient(135deg, #f35a08, #9fe80d);
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container h1 {
+    margin: 20px 0 40px 0;
+    text-decoration: underline;
+    color: rgb(52, 3, 3);
+}
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(122px, 1fr));
+}
+.cell {
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    font-size: 60px;
+    font-weight: 600;
+    height: 120px;
+    width: auto;
+    cursor: pointer;
+}
+.cell:nth-child(n){
+    border-top: none;
+}
+.cell:nth-child(3n){
+    border-right: none;
+}
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+.cell:nth-child(n+7){
+    border-bottom: none;
+}
+
+.gamePlayers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border: 2px solid green;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #0ef,
+    0 0 25px #0ef;
+   
+}
+.player {
+    margin-inline: 18px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #041429;
+    font-weight: 800;
+}
+.restartBtn {
+    border: none;
+    background: #e2610c;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-block: 18px;
+    margin-bottom: 40px;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(26, 27, 27),
+    0 0 25px rgb(26, 27, 27);
+}
+.restartBtn:hover {
+    background: hsl(55, 93%, 47%);
+    color: red;
+    
+}
+.cell.disabled {
+    background: #8c8c8c;
+}
+
+.alertBox {
+    position: fixed;
+    top: 0;
+    background-color: #eee305;
+    color: #200279;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 40px;
+    display: none;
+}
+
+.developer {
+    width: 90%;
+    max-width: 470px;
+    height: auto;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0ef;
+    background-color: #290406;
+    margin-top: 0;
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: transparent;
+    border-radius: 14px;
+    box-shadow: 0 0 5px #041429,
+    0 0 5px #041429;
+    animation: slideTop 1s 2s ease forwards;
+    text-align: center;
+}
+
+.developer:hover {
+    box-shadow: 0 0 5px rgb(21, 64, 234),
+    0 0 25px rgb(21, 64, 234), 
+    0 0 50px rgb(21, 64, 234),
+    0 0 100px rgb(21, 64, 234),
+     0 0 200px rgb(21, 64, 234);
+}
+
+
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+}
+
+
+
+   
+
+@media screen and (max-width:550px) {
+    .container h1 {
+        font-size: 24px;
+    }
+    .gameBoard {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(90px, 1fr));
+    }
+    .cell {
+        height: 90px;
+    }
+}
